@@ -1,0 +1,14 @@
+# ping-source.yaml
+apiVersion: sources.knative.dev/v1
+kind: PingSource
+metadata:
+  name: test-ping
+  namespace: default
+spec:
+  schedule: "*/1 * * * *"
+  data: '{"message": "Hello from PingSource!"}'
+  sink:
+    ref:
+      apiVersion: eventing.knative.dev/v1
+      kind: Broker
+      name: default

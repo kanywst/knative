@@ -1,0 +1,12 @@
+# in-memory-channel-configmap.yaml
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: in-memory-channel
+  namespace: knative-eventing
+data:
+  channelTemplateSpec: |
+    {
+      "apiVersion": "messaging.knative.dev/v1",
+      "kind": "InMemoryChannel"
+    }
